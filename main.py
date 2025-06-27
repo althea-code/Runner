@@ -3,19 +3,22 @@ from sys import exit
 
 pygame.init()
 
+#Variables
 # create display surface
 screen = pygame.display.set_mode((800,400))
-
 # set window menu bar tile
 pygame.display.set_caption('Runner')
-
 # create clock object
 clock = pygame.time.Clock()
+# Font(font type, font size)
+test_font = pygame.font.Font(None, 50)
 
 # create a surface objects
 sky_surface = pygame.image.load('graphics/Sky.png')
 ground_surface = pygame.image.load('graphics/ground.png')
 player_surface = pygame.image.load('graphics/player.png')
+# render(text, Anti-Aliasing, Color)
+text_surface = test_font.render('Runner: A Game', False, 'Green' )
 
 
 while True:
@@ -37,6 +40,9 @@ while True:
 
     # draw player onto display screen
     screen.blit(player_surface, (50,220))
+    
+    # draw text 
+    screen.blit(text_surface,(300, 50))
 
     # updates screen's display surface
     pygame.display.update()
